@@ -1,0 +1,32 @@
+<div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">      
+  <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-zinc-700">
+    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 class="text-xl font-sans  text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              {{title}}
+          </h1>
+          <form [formGroup]="formLogin" (submit)="enviar()" class="space-y-6 md:space-y-6" >
+            
+              <div>
+                <p class="text-white text-center">{{formLogin.invalid}}</p>
+                
+                  <label for="username" class="font-sans block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+                  <input type="email" class=" text-gray-900 sm:text-sm   block w-full p-2.5   dark:text-black "  
+                  name="username"
+                  formControlName="username" required="">
+              </div>
+              <div>
+                  <label for="password" class="font-sans block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                  <input name="password"
+                  formControlName="password" type="password"  class="text-gray-900 sm:text-sm   block w-full p-2.5  dark:text-black " required="">
+              </div>
+              <button type="submit" class="font-sans w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 boton">Enviar</button>
+              <p class="text-white text-center">{{formLogin.value | json}}</p>
+              <p class="text-white resultado text-center ">{{resultado}}</p>
+          </form>
+         
+      </div>
+  </div>
+</div>
+
+ 
+
